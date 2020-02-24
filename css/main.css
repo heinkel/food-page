@@ -1,3 +1,9 @@
+/* CUSTOM PROPERTIES*/
+:root {
+    --leading: 2em; /*reausable property just call as var(--leading) for this one and allows to apply everywhere*/
+}
+
+
 body {
     font-family: 'Montserrat',sans-serif;
     margin: 0;
@@ -39,7 +45,7 @@ h1 span {
     text-transform: uppercase;  /*change caracther to uppercase from original*/
     display: block; /* showing text on his own line rest of the h1 goes in next line*/
     font-size: 1.4rem;
-    position: relative;
+    position: relative; /*this can't be seen over before pseudo element without declaring as relative position*/
     z-index: 1;
 }
 
@@ -108,4 +114,38 @@ input[type=button] {
 
 input[type=button]:hover { /*this add styles modification in case of : '' for this case when hover*/
     background-color: rgb(190, 114, 8);
+}
+
+.authentic {
+    margin: 0;
+}
+
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+h2 {
+    text-transform: uppercase;
+    position:relative  ;
+}
+
+
+h2::before { /*this  adds a pseudo element so this means an extra element just before original creating a first child for this element, use after to apply this before original*/
+    content: ''; /*text inside this elelment , I want content empty no text attached on it*/
+    position: absolute;  /* absolute respect to its parent element who should be relative position*/
+    width: 8em;
+    background-color: #00BFFF;
+    height: .4em;
+    bottom: 0;
+    z-index: -1; /* This moves color line before h1 span text that is in level 1*/
+    margin-left: -.3em;  /*negative because I just want the line a littler to the left form original position*/
+}
+
+
+img {
+    width: 100%; /*100% of what user can see, original image in reality is super big but adjust to user window now*/
+}
+
+p {
+    line-height: var(--leading);
 }
