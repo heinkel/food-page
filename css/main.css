@@ -1,0 +1,111 @@
+body {
+    font-family: 'Montserrat',sans-serif;
+    margin: 0;
+}
+
+.hero-bg {
+    background: url("../images/oranges.jpg");
+    background-position: 12% 83%; /*first ,oves X index , second Y dimension*/
+    color: white;
+    text-align: center;
+    padding-bottom: 4em ;
+}
+
+
+ /*   a inside header only modifier */
+.hero-bg a{ 
+    color:white;
+    text-decoration: none; 
+    /* this deleates underline on link a into header */
+    font-weight: bold;
+    font-size: 1.2rem;
+     /* why rem, well for fonts I prefer to use rem for responsive concern*/
+}
+
+header{
+    padding: 1em 0em;
+}
+
+section {
+    margin: 0 1em;
+}
+
+ h1 {
+    font-size: 2.5rem;
+    margin: 2em 0 1.2em;
+}
+
+h1 span {
+    text-transform: uppercase;  /*change caracther to uppercase from original*/
+    display: block; /* showing text on his own line rest of the h1 goes in next line*/
+    font-size: 1.4rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 span::before { /*this  adds a pseudo element so this means an extra element just before original creating a first child for this element, use after to apply this before original*/
+    content: ''; /*text inside this elelment , I want content empty no text attached on it*/
+    position: absolute;  /* absolute respect to its parent element who should be relative position*/
+    width: 3em;
+    background-color: #00BFFF;
+    height: .4em;
+    bottom: 0;
+    z-index: -1; /* This moves color line before h1 span text that is in level 1*/
+    margin-left: -.3em;  /*negative because I just want the line a littler to the left form original position*/
+}
+
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+
+
+.form-container {
+    background-color: white;
+    margin: 2em -1em 0; /* this -1em for sides makes this form container goes over its form-container*/ 
+    padding: 2em; /*this separete content from borders pushing element more to the center of container*/
+}
+
+label {
+    color: #2D7D98;
+    font-weight: bold;
+    display: block;  /* making 'Enter your city'  text goes alone into the line, input goes next line then*/
+    font-size: 1.2em;
+    margin-bottom: 1em; 
+}
+/* I've two input elements right now , but by the moment I just would like to pick my elements up based on type so [] allow to specify this*/
+input[type=text] { 
+    border: 1px solid #707070; /* makes easier so see the line being solid this border specification also allows to declare color */
+    width: 100%; /* This means take all the line width*/  /*NOTE: this used together with padding 1em will add to right undesired space for 1em
+    to avoid this we should add box-sizing: border-box this always happen when conbines 100% on width making use of padding at the same time*/
+    padding: 1em; /*this makes more space inside input */
+    box-sizing: border-box;
+    border-radius: .5em;  /*this rounds boder for input tetx */
+    margin-top: 1.2em;
+ 
+}
+
+.form-container p {
+    color: grey ;
+    margin-bottom: 1.5em;
+    margin-top: .3em;
+    font-weight: normal;
+    font-size: .9em;
+}
+
+input[type=button] {
+    background-color: #F89104;
+    
+    width: 100%;
+    border:none;
+    border-radius: .5em;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer; /*This changes the cursor shape when hoover this button*/
+    padding: 1em 0;
+}
+
+input[type=button]:hover { /*this add styles modification in case of : '' for this case when hover*/
+    background-color: rgb(190, 114, 8);
+}
