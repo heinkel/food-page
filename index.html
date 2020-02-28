@@ -8,9 +8,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script src="script.js"></script>
+  
 </head>
 <body>
+
+    <div class="overlay" id="overlay">
+        <h3>Searching now ...</h3>
+    </div>
+    <!-- previous HMTL element is added to add effects making invocations to this elelment from javascript function -->
     <div class="hero-bg">
         <section class="top">
             <header>
@@ -20,14 +25,15 @@
             <!-- applying an specific rule over The Healthy text -->
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, nobis quibusdam? Tenetur explicabo quae at doloribus id quia deleniti ea.</p>
             <div class="form-container">
-                <form action="/" method="POST">
+                <form action="/" method="POST" id="myForm">
                     <!-- following div will wrapp next 3 elements to make more easy columns on desktop view -->
                     <div class="form-left"> 
                         <label for="city">Enter your city:</label>
-                        <input type="text" name="city" id="city">
+                        <input type="text" name="city" id="city" >
                         <p>Example: "San Diego"</p>
                     </div>
-                    <input type="button" value="Find Food Now">
+                    <input type="button" value="Find Food Now" id="cta-btn"> 
+                    <!-- I will be adding id cta-btn to this button to call the element with javascript later to apply some effects-->
                 </form>
             </div>
     </div>
@@ -38,5 +44,6 @@
         </div>
         <img src="images/gyoza.jpg" alt="gyoza food dish">
     </section>
+    <script src="script.js"></script>
 </body>
 </html> 

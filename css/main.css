@@ -12,7 +12,7 @@ body {
 .hero-bg {
     background: #307D99 url("../images/oranges.jpg");
     background-size: cover;
-    background-position: 12% 83%; /*first ,oves X index , second Y dimension*/
+    background-position: 20% 50%; /*first ,oves X index , second Y dimension*/
     color: white;
     text-align: center;
     padding-bottom: 4em ;
@@ -154,6 +154,22 @@ p {
     line-height: var(--leading);
 }
 
+.overlay    {
+    position: absolute;
+    z-index: 1; /* taking it to front over animation effect*/
+    height: 120vh; /*viewport height*/
+    width: 100%;
+    background: rgb(0, 0, 0,.9); /*black in 90% of transparency*/
+    place-content: center; /*content text should be in the middle this requires to call display :grid property*/
+    color: white;
+    display: none; /*display only activates if place-content 'center' is activated*/
+    opacity: 0; /*I dont want to see this by default just when button click event is triggered I will change this to 1 */
+}
+
+.animate-overlay{
+    animation: overlay 3s forwards; /* first animation name, then duration, finally what next*/
+}
+
 /* between 730 and 930px for laptop */
 @media (min-width: 730px) {
     section {
@@ -249,5 +265,19 @@ p {
         opacity: 1;
         transform: translateY(0);  
     }
-
 }
+
+ @keyframes overlay { 
+    0% {  /* time percentage*/
+        opacity: 0;    
+    }
+    30% {  
+        opacity: 1;
+    }
+    70% {  
+        opacity: 1;
+    }
+    100% {  
+        opacity: 0;
+    }
+} 
